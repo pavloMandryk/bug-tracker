@@ -1,0 +1,27 @@
+.loginBG{
+    width: 80vw;
+    height:40vw;
+    background: #cbf1f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+
+}
+.login-panel{
+    background-color: var(--primary-color);
+    height: 20vw;
+    width: 30vw;
+    border:3px solid #71c9ce;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input, button {
+    width: 50%;
+    height: 2vw;
+    margin: 0.6vw;
+}
+h1 {
+    color: #71c9ce
+}

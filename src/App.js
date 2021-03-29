@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Login from './Views/Login/Login';
+import { useSelector } from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
+import SideBar from './Views/SideBar/SideBar';
+import ViewBugPage from './Views/Pages/viewBugs';
 
-function App() {
+const App = () => {
+  const {auth} = useSelector(state => state)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+        {!auth.loggedIn ? <Login /> :
+          <>
+            <SideBar />
+            <ViewBugPage />
+          </>
+        }
+    </Router>
+    );
 }
 
 export default App;
